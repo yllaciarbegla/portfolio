@@ -1333,6 +1333,13 @@ html.dark .aura.active {
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .cursor,
+  .aura {
+    display: none;
+  }
+}
+
 @media (min-height: 768px) {
   .contact__links {
     font-size: calc(var(--index) * 2);
