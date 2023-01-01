@@ -1537,7 +1537,7 @@ html.dark .aura.active {
   }
 
   .projects__links {
-    font-size: calc(var(--index) * 3);
+    font-size: calc(var(--index) * 2.5);
   }
 
   .contact {
