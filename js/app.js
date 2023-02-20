@@ -47,7 +47,6 @@ function windowLoad() {
 		html.classList.remove(currentTheme);
 		html.classList.add(newTheme);
 
-
 		saveTheme ? localStorage.setItem('user-theme', newTheme) : null;
 	}
 
@@ -55,15 +54,15 @@ function windowLoad() {
 	let aura = document.querySelector('.aura');
 	let cursor = document.querySelector('.cursor');
 	let activeButtons = document.querySelectorAll('.active-button');
-	document.addEventListener('mousemove', function (e) {
-		aura.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
-	});
 
 	document.addEventListener('mousemove', function (e) {
 		let x = e.clientX;
 		let y = e.clientY;
+
 		cursor.style.left = x + 'px';
 		cursor.style.top = y + 'px';
+
+		aura.style.transform = `translate3d(calc(${x}px - 50%), calc(${y}px - 50%), 0)`
 	});
 
 	document.addEventListener('mousedown', function () {
@@ -74,7 +73,7 @@ function windowLoad() {
 		cursor.classList.remove('cursorinnerhover');
 	});
 
-	document.addEventListener('mousemove', function () {
+	document.addEventListener('mouseover', function () {
 		cursor.classList.remove('hidden');
 		aura.classList.remove('hidden');
 	});
@@ -85,13 +84,11 @@ function windowLoad() {
 	});
 
 	activeButtons.forEach(item => {
-		item.addEventListener('mousemove', function () {
+		item.addEventListener('mouseover', function () {
 			cursor.classList.add('active');
 			aura.classList.add('active');
 		});
-	})
 
-	activeButtons.forEach(item => {
 		item.addEventListener('mouseout', function () {
 			cursor.classList.remove('active');
 			aura.classList.remove('active');
@@ -100,7 +97,7 @@ function windowLoad() {
 
 	// Slider
 
-	const swiper = new Swiper('.swiper', {
+	new Swiper('.swiper', {
 		speed: 700,
 		keyboard: true,
 		simulateTouch: false,
