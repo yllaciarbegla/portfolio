@@ -4,7 +4,7 @@ function windowLoad() {
 
 	let page = document.querySelector('.page');
 
-	setTimeout(function () {
+	setTimeout(() => {
 		page.classList.add("loaded");
 	}, 500);
 
@@ -20,7 +20,7 @@ function windowLoad() {
 	window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => !saveUserTheme ? changeTheme() : null);
 
 	if (themeButton) {
-		themeButton.addEventListener('click', function () {
+		themeButton.addEventListener('click', () => {
 			changeTheme(true);
 		});
 	}
@@ -55,7 +55,7 @@ function windowLoad() {
 	let cursor = document.querySelector('.cursor');
 	let activeButtons = document.querySelectorAll('.active-button');
 
-	document.addEventListener('mousemove', function (e) {
+	document.addEventListener('mousemove', (e) => {
 		let x = e.clientX;
 		let y = e.clientY;
 
@@ -65,31 +65,31 @@ function windowLoad() {
 		aura.style.transform = `translate3d(calc(${x}px - 50%), calc(${y}px - 50%), 0)`
 	});
 
-	document.addEventListener('mousedown', function () {
+	document.addEventListener('mousedown', () => {
 		cursor.classList.add('cursorinnerhover');
 	});
 
-	document.addEventListener('mouseup', function () {
+	document.addEventListener('mouseup', () => {
 		cursor.classList.remove('cursorinnerhover');
 	});
 
-	document.addEventListener('mouseover', function () {
+	document.addEventListener('mouseover', () => {
 		cursor.classList.remove('hidden');
 		aura.classList.remove('hidden');
 	});
 
-	document.addEventListener('mouseout', function () {
+	document.addEventListener('mouseout', () => {
 		cursor.classList.add('hidden');
 		aura.classList.add('hidden');
 	});
 
 	activeButtons.forEach(item => {
-		item.addEventListener('mouseover', function () {
+		item.addEventListener('mouseover', () => {
 			cursor.classList.add('active');
 			aura.classList.add('active');
 		});
 
-		item.addEventListener('mouseout', function () {
+		item.addEventListener('mouseout', () => {
 			cursor.classList.remove('active');
 			aura.classList.remove('active');
 		});
