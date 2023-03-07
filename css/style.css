@@ -1283,7 +1283,7 @@ html.dark .aura.active {
 	}
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1024px) {
 	.back__wrapper {
 		display: none;
 	}
@@ -1303,9 +1303,7 @@ html.dark .aura.active {
 			linear-gradient(to right, var(--light) 1px, transparent 1px),
 			linear-gradient(to bottom, var(--light) 1px, transparent 1px);
 	}
-}
 
-@media screen and (max-width: 1024px) {
 	.cursor,
 	.aura {
 		display: none;
@@ -1345,6 +1343,6 @@ html.dark .aura.active {
 	}
 
 	.contact__links ul li:last-child {
-		margin-bottom: calc(var(--index) * 1.5);;
+		margin-bottom: calc(var(--index) * 1.5);
 	}
 }
