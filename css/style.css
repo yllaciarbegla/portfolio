@@ -1283,7 +1283,7 @@ html.dark .aura.active {
 	}
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1440px) {
 	.back__wrapper {
 		display: none;
 	}
@@ -1303,7 +1303,9 @@ html.dark .aura.active {
 			linear-gradient(to right, var(--light) 1px, transparent 1px),
 			linear-gradient(to bottom, var(--light) 1px, transparent 1px);
 	}
+}
 
+@media screen and (max-width: 1024px) {
 	.cursor,
 	.aura {
 		display: none;
@@ -1324,6 +1326,24 @@ html.dark .aura.active {
 }
 
 @media (max-height: 350px) {
+	::-webkit-scrollbar {
+		width: 18px;
+	}
+
+	::-webkit-scrollbar-thumb:vertical {
+		width: 2px;
+		border: 8px solid var(--grey);
+	}
+
+	::-webkit-scrollbar:horizontal {
+		height: 18px;
+	}
+
+	::-webkit-scrollbar-thumb:horizontal {
+		width: 2px;
+		border: 8px solid var(--grey);
+	}
+
 	.contact__links ul li:last-child {
 		margin-bottom: calc(var(--index) * 1.5);;
 	}
